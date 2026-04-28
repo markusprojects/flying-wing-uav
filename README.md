@@ -52,12 +52,12 @@ This project documents the end-to-end engineering of a custom flying wing UAV: f
 
 The full engineering process is documented in the `docs/` folder:
 
-1. [Design Rationale](docs/01-design.md) — aerodynamic decisions, trade-offs, sizing
-2. [CAD Workflow](docs/02-cad.md) — step-by-step Fusion 360 modeling
-3. [CFD Analysis](docs/03-cfd.md) — ANSYS Fluent setup and results
-4. [Build & Manufacturing](docs/04-build.md) — print settings, assembly
-5. [Electronics & Avionics](docs/05-electronics.md) — components, wiring, FC tuning
-6. [Flight Testing](docs/06-flight.md) — maiden flight, telemetry, lessons
+1. [Design Rationale](docs/01-design.md) aerodynamic decisions, sizing
+2. [CAD Workflow](docs/02-cad.md) step-by-step Fusion 360 modeling
+3. [CFD Analysis](docs/03-cfd.md) ANSYS Fluent setup and results
+4. [Build & Manufacturing](docs/04-build.md) print settings, assembly
+5. [Electronics & Avionics](docs/05-electronics.md) components, wiring, FC tuning
+6. [Flight Testing](docs/06-flight.md) maiden flight, telemetry
 
 
 ## Project Status
