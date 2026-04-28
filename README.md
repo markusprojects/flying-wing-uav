@@ -24,7 +24,7 @@ This project documents the end-to-end engineering of a custom flying wing UAV: f
 | Airfoil             | MH 45 (reflexed)       |
 | Target MTOW         | ~900 g                 |
 | Target payload      | ~190 g                 |
-| Target cruise speed | 60–80 km/h             |
+| Target cruise speed |                        |
 | Target L/D          | > 10                   |
 
 
