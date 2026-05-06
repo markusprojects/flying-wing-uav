@@ -7,7 +7,7 @@
 
 This project documents the end-to-end engineering of a custom flying wing UAV: from aerodynamic concept selection, through CAD modeling and CFD validation, to manufacturing and flight testing. The goal was to design an efficient, payload-capable airframe while learning the full UAV development pipeline.
 
-**Why a flying wing?** Compared to conventional configurations, flying wings offer a higher lift-to-drag ratio for a given wingspan because the entire airframe contributes to lift — there is no tail or fuselage that only adds drag. This makes them ideal for endurance and payload missions.
+**Why a flying wing?** Compared to conventional configurations, flying wings offer a higher lift-to-drag ratio for a given wingspan because the entire airframe contributes to lift, there is no tail or fuselage that only adds drag. This makes them ideal for endurance and payload missions.
 
 ## Specifications
 
