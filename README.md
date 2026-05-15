@@ -40,7 +40,6 @@ This project documents the end-to-end engineering of a custom flying wing UAV: f
 - **33° leading-edge sweep** gives passive pitch stability
 - **2° washout (geometric twist)** prevents tip stall, critical for safe flight at high angles of attack
 - **Removable wings** wings attach to a central pod via 8 mm carbon spar plus M4 wing bolts for transport and easy maintenance
-- **Beluga-style nose hatch** front of the pod opens for access to the electronics tray (still in concept)
 - **Winglets** design ongoing, initial version removed due to geometry issues
 
 
