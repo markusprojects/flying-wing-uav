@@ -11,21 +11,27 @@ This project documents the end-to-end engineering of a custom flying wing UAV: f
 
 ## Specifications
 
-| Parameter           | Value                  |
-| ------------------- | ---------------------- |
-| Wingspan            | 1100 mm                |
-| Root chord          | 280 mm                 |
-| Tip chord           | 120 mm                 |
-| Wing area           | 0.22 m²                |
-| Aspect ratio        | 5.5                    |
-| Sweep angle         | 33°                    |
-| Dihedral            | 5°                     |
-| Washout             | 2°                     |
-| Airfoil             | MH 45 (reflexed)       |
-| Target MTOW         | ~900 g                 |
-| Target payload      | ~190 g                 |
-| Target cruise speed |                        |
-| Target L/D          | > 10                   |
+| Parameter                | Value                |
+| ------------------------ | -------------------- |
+| Wingspan                 | 1100 mm              |
+| Pod width                | 200 mm               |
+| Effective half-span      | 450 mm per side      |
+| Root chord (at pod edge) | 250.88 mm            |
+| Tip chord                | 120 mm               |
+| Taper ratio              | 0.478                |
+| Reference area           | ~0.244 m²            |
+| Aspect ratio             | ~4.96                |
+| Sweep angle              | 33°                  |
+| Dihedral                 | None (FC stabilized) |
+| Washout                  | 2°                   |
+| Airfoil                  | MH 45 (reflexed)     |
+| Target MTOW              | ~800 g               |
+| Max MTOW                 | ~1000 g              |
+| Target payload           | ~190 g               |
+| Target cruise speed      | 60–80 km/h           |
+| Target L/D               | > 10                 |
+| Est. stall speed         | ~34–43 km/h          |
+| Target CG (maiden)       | ~158 mm from root LE |
 
 
 ## Design Highlights
@@ -35,7 +41,7 @@ This project documents the end-to-end engineering of a custom flying wing UAV: f
 - **2° washout (geometric twist)** prevents tip stall, critical for safe flight at high angles of attack
 - **Removable wings** wings attach to a central pod via 8 mm carbon spar plus M4 wing bolts for transport and easy maintenance
 - **Beluga-style nose hatch** front of the pod opens for access to the electronics tray (still in concept)
-- **Trapezoidal winglets with sweep** reduce induced drag and improve yaw stability
+- **Winglets** design ongoing, initial version removed due to geometry issues
 
 
 
