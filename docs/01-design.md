@@ -232,7 +232,7 @@ Before starting the design, we worked through the aerodynamic fundamentals
 from scratch. Such as airfoil theory, reflexed profiles, wing twist, elliptical lift 
 distribution, and the specific challenges of tailless configurations.
 
-![Study notes](../images/Screenshot_5.png)
+![Study notes](../images/Screenshot_6.png)
 
 
 
