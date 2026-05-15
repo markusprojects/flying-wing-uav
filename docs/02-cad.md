@@ -30,11 +30,13 @@ The wing was built using a loft-based workflow, which gives precise control over
 **Airfoil import:** The MH 45 profile was imported from a `.dat` coordinate file. The raw file leaves a small gap at the trailing edge, this had to be closed manually before the loft would execute.
  
 **Washout:** The tip profile was rotated ~2° (trailing edge up) to add geometric washout. In practice this resulted in the tip chord sitting 4mm above the root chordline, verified via Inspect → Measure.
+
+![Washout overview](../images/Screenshot_3.png)
  
 **No shell for CFD:** The model is intentionally left as a solid body. CFD only sees the external surface, internal geometry is irrelevant for external aerodynamics. Hollowing is reserved for the print-ready version.
 
 **Pod creation**: The pod body was created via the pod profile sketch to be lofted to the root of the wing. Several rails were created to achieve the pod form. In earlier versions the pod was attempted to be build as a seperate body and be assembled ontop of the wing. Not it is fully integrated into the main body.
- 
+
 ---
  
 ## Challenges & What We Learned
@@ -46,8 +48,11 @@ The wing was built using a loft-based workflow, which gives precise control over
 The winglets initially showed 20 face intersection errors in ANSYS Discovery. The root cause was an imprecise transition between the winglet extrude and the swept wing surface, the faces were touching but not cleanly joined. Fusion's own geometry check showed no issues, which was misleading.
  
 **Lesson:** Fusion's internal geometry validation is less strict than what CFD preprocessors require. Always validate the exported STEP in Discovery before starting mesh setup.
- 
+
+ ![ANSYS Discovery errors](../images/Screenshot_2.png)
  
 ---
  
-## Current Model State (CFD-ready)
+## Current Model State (CFD-ready) (No winglets)
+
+![CFD-Ready](../images/Screenshot_4.png)
