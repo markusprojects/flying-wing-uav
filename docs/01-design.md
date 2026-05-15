@@ -210,3 +210,18 @@ All measurements are taken from the **Leading Edge of the wing root** (exactly w
 | Cruise speed | 60–80 km/h |
 | Estimated stall speed | ~34–43 km/h |
 | Target CG (Maiden) | ~158mm from Root LE |
+
+## 12. Remaining Design Tasks
+
+The current model is prepared for CFD analysis. The following features are still pending for the final build model:
+
+### Mechanical
+- [ ] Servo bays cutouts for 2× 9g servos (one per elevon)
+- [ ] Motor mount pusher configuration at pod rear
+- [ ] Electronics tray
+- [ ] Wing-pod attachment 
+- [ ] Print segmentation
+
+### Aerodynamic
+- [ ] Winglets new design pending 
+- [ ] Elevon geometry 
