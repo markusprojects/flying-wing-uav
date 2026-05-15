@@ -224,4 +224,17 @@ The current model is prepared for CFD analysis. The following features are still
 
 ### Aerodynamic
 - [ ] Winglets new design pending 
-- [ ] Elevon geometry 
+- [ ] Elevon geometry
+
+## Background & Preparation
+
+Before starting the design, we worked through the aerodynamic fundamentals 
+from scratch. Such as airfoil theory, reflexed profiles, wing twist, elliptical lift 
+distribution, and the specific challenges of tailless configurations.
+
+![Study notes](../images/Screenshot_5.png)
+
+
+
+
+
