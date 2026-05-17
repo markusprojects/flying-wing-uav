@@ -1,4 +1,4 @@
-# CFD Analysis — ANSYS Fluent
+# CFD Analysis
  
 This document covers the full simulation workflow for the flying wing, includig geometry preparation, mesh setup, solver configuration, and first results.
  
