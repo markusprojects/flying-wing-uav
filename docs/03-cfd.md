@@ -20,7 +20,6 @@ The STEP file exported from Fusion 360 was imported into ANSYS Discovery for geo
 - 1 harmless info: "Edge is inexact and not lying on face" at the pod junction
 
 - Geometry accepted as CFD-ready
-> ![Error](../images/Geometry_Error.png)
  
 The wing body was deleted from the enclosure volume, leaving only the fluid domain with the wing-shaped cavity. The enclosure body was explicitly set to **Fluid**.
  
