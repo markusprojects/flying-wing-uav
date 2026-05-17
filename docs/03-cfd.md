@@ -42,7 +42,7 @@ The model includes the full wing (no symmetry split) rotated **7° nose-up** to 
 - Average Skewness: 0.225 (good)
 - Max Skewness: 0.843 (acceptable)
 
-> ![Skewness](../images/Skewness.png)
+> ![Skewness](../images/Skewsness.png)
  
 ---
  
