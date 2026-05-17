@@ -66,7 +66,7 @@ The model includes the full wing (no symmetry split) rotated **7° nose-up** to 
  
 ### Convergence
  
-The simulation converged after ~500 iterations. Most residuals dropped below 1e-5; continuity stabilized around 1e-5, k around 1e-4 — acceptable for a first run on a coarse mesh.
+The simulation converged after ~500 iterations. Most residuals dropped below 1e-5; continuity stabilized around 1e-5, k around 1e-4.
  
 > ![Solution](../images/solution.png)
  
@@ -93,7 +93,7 @@ L/D = 14.8 is a reasonable result for a flying wing at this scale and speed. The
  
 Cm = **+0.01873** about the estimated CG (located approximately 80 mm ahead of the pod nose).
  
-A positive Cm indicates a nose-up pitching moment at this operating point. This suggests the current CG estimate may be aft of the neutral point, which would imply the configuration is statically unstable at this condition. A second simulation at a different AoA is needed to determine the neutral point location — this is planned as the next step.
+A positive Cm indicates a nose-up pitching moment at this operating point. This suggests the current CG estimate may be aft of the neutral point, which would imply the configuration is statically unstable at this condition. A second simulation at a different AoA is needed to determine the neutral point location.
  
 ---
  
