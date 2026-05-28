@@ -103,7 +103,7 @@ A positive Cm indicates a nose-up pitching moment at this operating point. This 
 > ![Down](../images/pressure_down.png)
  
 The pressure distribution is physically consistent:
-- High pressure on the lower surface — stagnation at the leading edge, pressure recovery toward the trailing edge
+- High pressure on the lower surface, stagnation at the leading edge, pressure recovery toward the trailing edge
 - Low pressure on the upper surface, concentrated near the leading edge
 - A local pressure disturbance visible at the pod-wing junction, expected given the geometric transition there
 ---
