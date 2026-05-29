@@ -22,7 +22,7 @@ This project documents the end-to-end engineering of a custom flying wing UAV: f
 | Reference area           | ~0.244 m²            |
 | Aspect ratio             | ~4.96                |
 | Sweep angle              | 33°                  |
-| Dihedral                 | None (FC stabilized) |
+| Dihedral                 | 5°                   |
 | Washout                  | 2°                   |
 | Airfoil                  | MH 45 (reflexed)     |
 | Target MTOW              | ~800 g               |
@@ -71,7 +71,7 @@ The full engineering process is documented in the `docs/` folder:
 - [x] CAD model (Fusion 360)
 - [x] Pod design
 - [ ] Servo bays & control surfaces refinement
-- [ ] CFD analysis (ANSYS Fluent)
+- [x] CFD analysis (ANSYS Fluent)
 - [ ] 3D printing & assembly
 - [ ] Electronics integration
 - [ ] Maiden flight
@@ -82,9 +82,9 @@ The full engineering process is documented in the `docs/` folder:
 
 | Metric           | Predicted (CFD) | Measured (Flight) |
 | ---------------- | --------------- | ----------------- |
-| L/D at cruise    | TBD             | TBD               |
-| Stall speed      | TBD             | TBD               |
-| Endurance        | TBD             | TBD               |
+| L/D at cruise    | 14.8             | TBD               |
+| CL    | 0.128           | TBD               |
+| CD        | 0.0087             | TBD               |
 
 
 ## Authors
