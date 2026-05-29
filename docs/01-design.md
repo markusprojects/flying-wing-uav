@@ -102,7 +102,7 @@ X_offset = 550 * tan(33°) = 357mm
 
 ## 5. Dihedral
 
-Dihedral was omitted in the initial design iteration. Roll stability is provided by the flight controller (ArduPlane) via active stabilization. Dihedral may be incorporated in a future design revision if passive roll stability proves insufficient during flight testing.
+A dihedral angle of 5° was incorporated to provide passive roll stability. This reduces reliance on the flight controller for roll correction and improves natural flight behavior, particularly during manual control and in the event of disturbances such as gusts. The flight controller (ArduPlane) provides additional active stabilization on top of this passive baseline.
 
 ---
 
