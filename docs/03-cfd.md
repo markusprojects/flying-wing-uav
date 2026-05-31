@@ -100,7 +100,7 @@ Velocity magnitude was held constant at 20 m/s, the angle was set through the X 
 
 First order upwind was used to establish a stable initial field, then momentum, k and omega were switched to second order on the converged field without re-initialising. Second order was essential: switching from first to second order on the 0 degree case reduced CD by roughly 37 percent (the first order result was artificially diffusive). Subsequent angle of attack cases were started from the previous converged solution rather than re-initialised, which converged faster.
 
-> ![Residuals](../images/residuals.png)
+
 
 ---
 
