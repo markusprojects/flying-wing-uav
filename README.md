@@ -40,7 +40,7 @@ This project documents the end-to-end engineering of a custom flying wing UAV: f
 - **33° leading-edge sweep** gives passive pitch stability
 - **2° washout (geometric twist)** prevents tip stall, critical for safe flight at high angles of attack
 - **Removable wings** wings attach to a central pod via 8 mm carbon spar plus M4 wing bolts for transport and easy maintenance
-- **Rear boom with pusher motor.** A tail boom extends rearward from the central pod on the aircraft centerline (X = 0) and carries the pusher motor at its end. The boom was modeled in Fusion 360 by sketching a circular profile on the rear face and lofting from the pod cross section into that circle using guide rails constrained tangent to the circle, so the rails close symmetrically into a clean round tail. The boom sits at roughly one third of the pod height so the thrust line passes close to the CG, with 1 to 2 deg of motor downthrust to trim the pitch effect of a pusher layout.
+- **Rear boom with pusher motor.** A tail boom extends rearward from the central pod on the aircraft centerline (X = 0) and carries the pusher motor at its end. 
 
 ## A Note on Winglets
 
