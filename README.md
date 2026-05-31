@@ -40,9 +40,18 @@ This project documents the end-to-end engineering of a custom flying wing UAV: f
 - **33° leading-edge sweep** gives passive pitch stability
 - **2° washout (geometric twist)** prevents tip stall, critical for safe flight at high angles of attack
 - **Removable wings** wings attach to a central pod via 8 mm carbon spar plus M4 wing bolts for transport and easy maintenance
-- **Winglets** design ongoing, initial version removed due to geometry issues
+- **Rear boom with pusher motor.** A tail boom extends rearward from the central pod on the aircraft centerline (X = 0) and carries the pusher motor at its end. The boom was modeled in Fusion 360 by sketching a circular profile on the rear face and lofting from the pod cross section into that circle using guide rails constrained tangent to the circle, so the rails close symmetrically into a clean round tail. The boom sits at roughly one third of the pod height so the thrust line passes close to the CG, with 1 to 2 deg of motor downthrust to trim the pitch effect of a pusher layout.
 
+## A Note on Winglets
 
+Winglets were part of the early concept (for induced drag reduction and added yaw stability) but have been dropped from the current design. The reasons:
+
+- The wing to winglet junction repeatedly caused unclean geometry in Fusion 360 and, downstream, surface intersection and meshing failures in ANSYS. The junction was never fully watertight, which compromised both the CAD model and the CFD mesh.
+- The 33 deg sweep already provides a usable baseline of directional stability, so the airframe is flyable without winglets for a first prototype.
+- For the maiden flight the priority is a clean, printable, and simulatable airframe. Removing the winglets eliminates the most problematic geometry on the model and lets the first build and first CFD run proceed on solid ground.
+- Winglets can be retrofitted later as a bolt on or reprinted tip section once a clean junction geometry is worked out, without changing the core wing.
+
+In short: the winglets were costing far more in geometry and meshing trouble than they were returning for a first flying prototype, so they were cut to get a reliable airframe into the air.
 
 ## Tools Used
 
@@ -75,17 +84,6 @@ The full engineering process is documented in the `docs/` folder:
 - [ ] 3D printing & assembly
 - [ ] Electronics integration
 - [ ] Maiden flight
-
-
-## Results
-
-
-| Metric           | Predicted (CFD) | Measured (Flight) |
-| ---------------- | --------------- | ----------------- |
-| L/D at cruise    | 14.8             | TBD               |
-| CL    | 0.128           | TBD               |
-| CD        | 0.0087             | TBD               |
-
 
 ## Authors
 
