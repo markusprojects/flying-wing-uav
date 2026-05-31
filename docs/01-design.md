@@ -9,14 +9,13 @@ This document explains the key aerodynamic decisions made during the design of t
 A flying wing eliminates the conventional fuselage and tail assembly. Every part of the airframe contributes to lift, unlike a conventional aircraft where the fuselage and tail produce only drag and downforce respectively.
 
 **Advantages for our use case:**
-- Higher lift-to-drag ratio (L/D) for a given wingspan
-- Lower wetted area -> less skin friction drag
-- Simpler structure -> lighter airframe -> more payload capacity
-
+- Higher lift to drag ratio (L/D) for a given wingspan
+- Lower wetted area, so less skin friction drag
+- Simpler structure, so a lighter airframe and more payload capacity
 **Disadvantages we had to address:**
-- Inherently pitch-unstable without careful design -> solved with reflexed airfoil + sweep
-- No rudder -> yaw stability addressed via winglets (design ongoing, see Section 8)
-- Limited payload volume -> solved with integrated pod design
+- Inherently pitch sensitive without careful design, solved with a reflexed airfoil plus sweep
+- No rudder, so directional stability relies on sweep (winglets were dropped, see Section 8)
+- Limited payload volume, solved with the integrated pod design
 
 **Inspiration:** Skywalker X8: a proven 2.1m flying wing platform widely used in UAV research and FPV. We scaled the design approach to 1.1m wingspan.
 
@@ -34,18 +33,20 @@ MH 45 was specifically designed for flying wings and offers:
 - Good L/D at chord Reynolds numbers corresponding to our cruise speed (~60–80 km/h)
 - Well-documented performance data from airfoiltools.com
 
-### Reynolds Number at Cruise
-
-The chord Reynolds number determines which airfoil performs best. At cruise:
-
-Re = (v * c) / ν ≈ 330,000
-
-Where:
-- v = 20 m/s (cruise velocity)
-- c = 0.25m (mean chord)
-- ν = 1.5*10⁻⁵ m²/s (kinematic viscosity of air at 15°C)
-
-This places the wing in the low Reynolds number regime (~100k–500k). MH 45 was specifically optimized for this range.
+### Reynolds Number
+ 
+The chord Reynolds number determines which airfoil performs best. Two reference lengths are used in this project, which is why two slightly different Reynolds numbers appear:
+ 
+Re = (v * c) / nu
+ 
+| Reference length | Value | Reynolds number | Used in |
+|------------------|-------|-----------------|---------|
+| Root chord c = 0.25 m | cruise sizing | approx. 330,000 | this design doc |
+| Mean aerodynamic chord c = 0.1931 m | CFD reference | approx. 264,000 | CFD doc |
+ 
+(v = 20 m/s, nu = 1.5e-5 m2/s for air at 15 C.)
+ 
+Both place the wing in the low Reynolds regime (about 100k to 500k), the range MH 45 was optimized for. The CFD uses the MAC as the reference length by convention, which is why its Reynolds number is lower than the root chord based value quoted here.
 
 **Alternatives considered:**
 
@@ -106,7 +107,7 @@ A dihedral angle of 5° was incorporated to provide passive roll stability. This
 
 ---
 
-## 6. Washout (Geometric Twist) - 2°
+## 6. Washout (Geometric Twist), 2°
 
 **Selected: 2° washout (tip leading edge rotated -2° relative to root)**
 
@@ -120,7 +121,19 @@ A 2° washout ensures that the wing root stalls before the tips. This is critica
 
 ---
 
-## 7. Weight Estimation
+## 7. Propulsion and Rear Boom
+ 
+The aircraft uses a pusher propeller mounted at the rear on a tail boom that extends back from the central pod.
+ 
+**Layout:**
+- The boom lies on the aircraft centerline (X = 0), in line with the nose.
+- It sits at roughly one third of the pod height from the bottom, so the thrust line passes close to the center of gravity. This keeps the pitch moment from thrust small.
+ 
+The exact thrust line height will be fine tuned against the final CG during assembly, and any small residual pitch trim is handled by the elevons and by adjusting downthrust.
+
+---
+
+## 8. Weight Estimation
 
 | Component | Estimated Mass |
 |-----------|---------------|
@@ -146,27 +159,14 @@ At 1000g, the estimated stall speed is safely below 45 km/h, requiring a confide
 
 ---
 
-## 8. Winglets - Design Ongoing
-
-Winglets reduce induced drag by limiting wingtip vortex formation and provide yaw stability by acting as small vertical stabilizers.
-
-**Current status:** The initial trapezoidal winglet design was removed due to CAD geometry issues at the wing-winglet junction. A new winglet design is being developed, with focus on:
-- Clean aerodynamic transition from wingtip to winglet
-- Printability without support structures
-- Effective vortex reduction
-
-The final winglet geometry will be documented here once finalized.
-
----
-
-## 9. Elevons - Design Ongoing
+## 9. Elevons, Design Ongoing
 
 Elevons serve as both elevator and aileron simultaneously. The only control surfaces on a flying wing.
 
 **Geometry:**
-- Span: Z =  mm to Z =  mm per side (Targeting ~20–80% of half-span)
-- Chord: ~25% of local wing chord
-- Clearance gap: 1mm for hinging
+- Span: targeting about 20 to 80 percent of the half span (exact Z positions to be finalized)
+- Chord: about 25 percent of the local wing chord
+- Clearance gap: 1 mm for hinging
 
 **Note for CFD:** A gap-free version of the model (elevons merged into wing) is used for aerodynamic simulation. The 1mm gap is included in the build model only.
 
@@ -223,7 +223,6 @@ The current model is prepared for CFD analysis. The following features are still
 - [ ] Print segmentation
 
 ### Aerodynamic
-- [ ] Winglets new design pending 
 - [ ] Elevon geometry
 
 ## Background & Preparation
