@@ -2,6 +2,7 @@
 
 > A 1.1 m flying wing drone designed from scratch in Fusion 360, validated with ANSYS Fluent CFD, and built with 3D printing. Inspired by the Skywalker X8.
 
+![CFD-Ready](../images/model_cfd.png)
 
 ## Overview
 
