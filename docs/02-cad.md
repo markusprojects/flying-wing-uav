@@ -59,4 +59,4 @@ After repeated attempts to clean up the junction, the winglets were removed from
  
 ## Current Model State (CFD-ready) (No winglets)
 
-![CFD-Ready](../images/Screenshot_4.png)
+![CFD-Ready](../images/model_cfd.png)
