@@ -4,7 +4,7 @@ This document explains the key aerodynamic decisions made during the design of t
 
 ---
 
-## 1. Configuration - Why a Flying Wing?
+## 1. Configuration: Why a Flying Wing?
 
 A flying wing eliminates the conventional fuselage and tail assembly. Every part of the airframe contributes to lift, unlike a conventional aircraft where the fuselage and tail produce only drag and downforce respectively.
 
