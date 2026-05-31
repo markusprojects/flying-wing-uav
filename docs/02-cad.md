@@ -20,9 +20,10 @@ The wing was built using a loft-based workflow, which gives precise control over
 3. Loft with leading-edge guide rail -> main wing body
 4. Add pod geometry as well as guide rails to achieve the wanted pod form
 5. Mirror wing to full span
-6. Add holm channel (sweep cut) (Not present in the CFD version)
-7. Add winglets (To be redone)
-8. Close elevon gaps for CFD (Not present in the CFD version)
+6. Add rear boom (loft guided past a circle sketch, then extrude, trim intersections, fillet)
+7. Add holm channel (sweep cut) (Not present in the CFD version)
+8. Add winglets (To be redone)
+9. Close elevon gaps for CFD (Not present in the CFD version)
 ---
  
 ## Key Decisions
@@ -37,17 +38,20 @@ The wing was built using a loft-based workflow, which gives precise control over
 
 **Pod creation**: The pod body was created via the pod profile sketch to be lofted to the root of the wing. Several rails were created to achieve the pod form. In earlier versions the pod was attempted to be build as a seperate body and be assembled ontop of the wing. Not it is fully integrated into the main body.
 
+**Rear boom:** the boom was created by sketching a circular profile on the rear face of the pod and lofting from the pod cross section into that circle. Guide rails were constrained tangent to the end circle so the rails close symmetrically into a clean round tail section. The boom lies on the centerline (X = 0) at roughly one third of the pod height, positioned so the pusher motor thrust line passes close to the CG. The boom carries the motor mount at its rear end.
 ---
  
 ## Challenges & What We Learned
 
 ### 
  
-### Winglet geometry errors for CFD
+### Winglet geometry errors led to removal
  
-The winglets initially showed 20 face intersection errors in ANSYS Discovery. The root cause was an imprecise transition between the winglet extrude and the swept wing surface, the faces were touching but not cleanly joined. Fusion's own geometry check showed no issues, which was misleading.
+The winglets initially showed 20 face intersection errors in ANSYS Discovery. The root cause was an imprecise transition between the winglet extrude and the swept wing surface: the faces were touching but not cleanly joined. Fusion's own geometry check showed no issues, which was misleading.
  
-**Lesson:** Fusion's internal geometry validation is less strict than what CFD preprocessors require. Always validate the exported STEP in Discovery before starting mesh setup.
+After repeated attempts to clean up the junction, the winglets were removed from the design entirely. The 33 deg sweep already provides a baseline of directional stability, so the airframe is flyable without them for a first prototype, and removing them eliminated the most problematic geometry on the model for both CAD and CFD. They can be revisited later as a reprinted tip section once a clean junction is worked out.
+ 
+**Lesson:** Fusion's internal geometry validation is less strict than what CFD preprocessors require. Always validate the exported STEP in Discovery before starting mesh setup. If a junction cannot be made watertight, it is better to remove the feature than to fight an unclean geometry through meshing.
 
  ![ANSYS Discovery errors](../images/Screenshot_2.png)
  
