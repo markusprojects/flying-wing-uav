@@ -36,9 +36,10 @@ The wing was built using a loft-based workflow, which gives precise control over
  
 **No shell for CFD:** The model is intentionally left as a solid body. CFD only sees the external surface, internal geometry is irrelevant for external aerodynamics. Hollowing is reserved for the print-ready version.
 
-**Pod creation**: The pod body was created via the pod profile sketch to be lofted to the root of the wing. Several rails were created to achieve the pod form. In earlier versions the pod was attempted to be build as a seperate body and be assembled ontop of the wing. Not it is fully integrated into the main body.
+**Pod creation:** The pod body was created via the pod profile sketch to be lofted to the root of the wing. Several rails were created to achieve the pod form. In earlier versions the pod was attempted to be build as a seperate body and be assembled ontop of the wing. Not it is fully integrated into the main body.
 
 **Rear boom:** the boom was created by sketching a circular profile on the rear face of the pod and lofting from the pod cross section into that circle. Guide rails were constrained tangent to the end circle so the rails close symmetrically into a clean round tail section. The boom lies on the centerline (X = 0) at roughly one third of the pod height, positioned so the pusher motor thrust line passes close to the CG. The boom carries the motor mount at its rear end.
+
 ---
  
 ## Challenges & What We Learned
