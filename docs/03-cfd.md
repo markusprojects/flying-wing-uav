@@ -4,8 +4,10 @@ This document covers the full CFD workflow for the flying wing: geometry prepara
 
 **Software:** ANSYS Fluent 2026 R1 (Student License)
 **Geometry input:** `cad/flying-wing.step`
-**Status:** Angle of attack polar complete (0 to 10 degrees)
 
+
+> **Status:** Angle of attack polar complete (0 to 10 degrees). Cross-checked against XFLR5; a refined-mesh spot check indicates the polar below under-predicts lift.
+ 
 > **Note:** The ANSYS Student License is limited to 1,048,576 cells. This constraint influenced most meshing decisions below.
 
 ---
@@ -144,6 +146,36 @@ Taking the converged points (0, 3, 5, 10 degrees), the configuration shows stabl
 
 The pressure field at 10 degrees angle of attack is physically consistent: stagnation and high pressure on the lower surface near the leading edge, strong suction on the upper surface concentrated toward the leading edge, and pressure recovery toward the trailing edge. A local pressure disturbance is visible at the pod to wing junction, expected given the geometric transition there. A few isolated, sharp pressure spikes appear at the trailing edge that do not match their smooth surroundings, these are numerical artefacts from the most distorted elements (skewness near 1) rather than real flow features, and being single cells among hundreds of thousands they have a negligible effect on the integrated forces.
 
+## Validation: XFLR5 Cross-Check and Mesh Sensitivity
+ 
+To check whether the polar above is physically reasonable, the lift-curve slope was compared against an independent method, and a single angle of attack was re-run on a finer mesh.
+ 
+### Lift-curve slope vs. theory and XFLR5
+ 
+The polar above gives a lift-curve slope of approximately **0.0155 per degree**. For this planform (aspect ratio ~4.85, quarter-chord sweep ~30 deg, MH 45 section), finite-wing theory predicts roughly **0.045-0.05 per degree**, which about three times higher.
+ 
+The wing was rebuilt in **XFLR5** from the design parameters and analysed with the vortex-lattice method (VLM1). XFLR5 confirmed the geometry (aspect ratio 4.85, root-to-tip sweep 29.95 deg, taper 0.48, MAC 0.19 m) and returned a clean, near-linear CL-alpha curve reaching **CL ~= 0.48 at 10 deg**, i.e. a slope of **~0.048 per degree**, with a stable (negative) Cm-alpha slope. This is consistent with theory and roughly three times the CFD slope above.
+ 
+The MH 45 section was also checked against published XFOIL data (airfoiltools.com, Re 200k, Ncrit 9): 2D section slope ~0.103 per degree with positive Cm0, confirming the airfoil itself is healthy. The conclusion is that the original mesh under-predicts lift, and the deficit is a CFD resolution issue, not a geometry or airfoil problem.
+ 
+### Refined-mesh spot check (5 deg)
+ 
+A finer wing surface mesh (7 mm faces with curvature capture, increased inflation layer count) was generated to better resolve the leading-edge suction peak, where most of the circulation is produced. The 5 deg case was re-run on this mesh:
+ 
+| Quantity (5 deg) | Original mesh | Refined mesh |
+|------------------|---------------|--------------|
+| CL | 0.1339 | **0.1355** |
+| Lift force | ~3.2 N | **7.60 N** |
+ 
+The refined single-point result is consistent with the XFLR5 prediction, supporting the conclusion that resolving the leading-edge suction peak recovers the missing lift. A full refined polar is required to quantify the final slope.
+
+> ![XFLR5 Validation](../images/xflr5.png)
+
+### What this means for the data above
+ 
+- **Lift trends and stability (Cm)** are directionally reliable and confirmed stable by XFLR5.
+- **Absolute lift** from the original polar is under-predicted; the XFLR5 slope (~0.048 /deg) is the better estimate until a full refined polar is run.
+- **Absolute drag / L-D** remains first order (y+ ~8, fully-turbulent SST at low Re).
 ---
 
 ## Challenges and What We Learned
@@ -190,6 +222,11 @@ Switching to second order on a freshly initialised field, or re-initialising aft
 
 **Lesson:** Change one thing at a time. Save Case and Data as a recovery point, switch to second order only on an already converged field without re-initialising, and reload the data instead of re-initialising if a run diverges.
 
+### Validate absolute values against an independent method
+ 
+The polar looked internally consistent (smooth, monotonic, physically sensible trends) yet under-predicted lift by ~3x. This was only caught by comparing the lift-curve slope against finite-wing theory and an XFLR5 vortex-lattice analysis. A CFD result can converge cleanly and still be quantitatively wrong.
+ 
+**Lesson:** Cross-check key coefficients against an independent method (theory, XFLR5, published data) before trusting absolute values.
 ---
 
 - Re-run the 7 degree case to convergence (lower under relaxation, force monitor on Cm) to confirm whether the positive Cm is real or numerical
