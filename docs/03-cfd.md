@@ -7,7 +7,7 @@ This document covers the full CFD workflow for the flying wing: geometry prepara
 **Geometry input:** `cad/flying-wing.step`
 
 
-**Status:** Angle of attack polar complete (0 to 10 degrees). Cross-checked against XFLR5; a refined-mesh spot check indicates the polar below under-predicts lift.
+**Status:** NEW POLAR INCOMING! First angle of attack polar complete (0 to 10 degrees). Cross-checked against XFLR5; a refined-mesh spot check indicates the polar below under-predicts lift.
  
 > **Note:** The ANSYS Student License is limited to 1,048,576 cells. This constraint influenced most meshing decisions below.
 
@@ -232,5 +232,4 @@ The polar looked internally consistent (smooth, monotonic, physically sensible t
 
 - Re-run the 7 degree case to convergence (lower under relaxation, force monitor on Cm) to confirm whether the positive Cm is real or numerical
 - Determine the neutral point from the converged dCm/dCL slope and compute the static margin against the estimated CG
-- Compare CL and CD against published MH 45 2D polar data as a sanity check
 - Refine the near wall mesh to a low y+ 
