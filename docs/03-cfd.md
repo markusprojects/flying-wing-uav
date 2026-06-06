@@ -3,6 +3,7 @@
 This document covers the full CFD workflow for the flying wing: geometry preparation, mesh generation, solver setup, and the angle of attack polar used to assess aerodynamic performance and static stability.
 
 **Software:** ANSYS Fluent 2026 R1 (Student License)
+**Validation:** XFLR5
 **Geometry input:** `cad/flying-wing.step`
 
 
