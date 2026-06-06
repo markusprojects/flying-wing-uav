@@ -6,7 +6,7 @@ This document covers the full CFD workflow for the flying wing: geometry prepara
 **Geometry input:** `cad/flying-wing.step`
 
 
-> **Status:** Angle of attack polar complete (0 to 10 degrees). Cross-checked against XFLR5; a refined-mesh spot check indicates the polar below under-predicts lift.
+**Status:** Angle of attack polar complete (0 to 10 degrees). Cross-checked against XFLR5; a refined-mesh spot check indicates the polar below under-predicts lift.
  
 > **Note:** The ANSYS Student License is limited to 1,048,576 cells. This constraint influenced most meshing decisions below.
 
